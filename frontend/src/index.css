@@ -1,0 +1,37 @@
+@import "tailwindcss";
+@import "@fontsource-variable/bricolage-grotesque";
+
+/* Design tokens: pen ink + highlighter. Tailwind turns each --color-* into utilities
+   like bg-paper, text-ink, border-line. Change a value here and the whole app follows. */
+@theme {
+  --font-sans: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+  --color-paper: #f6f7fb;
+  --color-ink: #1c2340;
+  --color-muted: #5b6482;
+  --color-line: #dde1ee;
+  --color-pen: #1f3a93;
+  --color-pen-dark: #172c70;
+  --color-highlight: #ffd84a;
+  --color-danger: #b3261e;
+  --color-ok: #1e7f5c;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-pen);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
